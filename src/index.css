@@ -26,7 +26,3 @@ body {
 .hamburger-active > span:nth-child(3) {
   @apply -rotate-45;
 }
-
-.nav-menu {
-  @apply absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none;
-}

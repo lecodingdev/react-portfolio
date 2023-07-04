@@ -67,7 +67,7 @@ const NavBar = () => {
 
             <nav
               onClick={toggleClass}
-              className={!isMobile && !isClassVisible ? "hidden" : "nav-menu"}
+              className={`absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none ${!isMobile && !isClassVisible ? "hidden" : ""}`}
             >
               <ul className="block lg:flex">
                 <li className="group">
@@ -92,6 +92,14 @@ const NavBar = () => {
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
                   >
                     Blog
+                  </a>
+                </li>
+                <li className="group">
+                  <a
+                    href="#project"
+                    className="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                  >
+                    Project
                   </a>
                 </li>
                 <li className="group">
