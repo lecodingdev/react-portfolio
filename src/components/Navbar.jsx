@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isClassVisible, setIsClassVisible] = useState(false);
+  const [isBackgroundChange, setIsBackgroundChange] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,12 +19,31 @@ const NavBar = () => {
     };
   }, []);
 
-  const toggleClass = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollThreshold = 10; 
+
+      if (scrollTop > scrollThreshold) {
+        setIsBackgroundChange(true);
+      } else {
+        setIsBackgroundChange(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  function toggleClass() {
     setIsClassVisible(!isClassVisible);
-  };
+  }
 
   return (
-    <header className="bg-transparent navbar-fixed top-0 left-0 w-full flex items-center z-10">
+    <header className={`bg-transparent absolute top-0 left-0 w-full flex items-center z-10 ${isBackgroundChange ? 'navbar-fixed' : ''}`}>
       <div className="container">
         <div className="flex items-center justify-between relative">
           <div className="px-4">
@@ -38,15 +58,11 @@ const NavBar = () => {
             <button
               onClick={toggleClass}
               type="button"
-              className="block absolute right-4 lg:hidden"
+              className={`block absolute right-4 lg:hidden ${isClassVisible ? "hamburger-active" : ""}`}
             >
-              <div
-                className={isClassVisible ? "hamburger-active" : "hidden-class"}
-              >
                 <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
                 <span className="hamburger-line transition duration-300 ease-in-out"></span>
                 <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-              </div>
             </button>
 
             <nav
