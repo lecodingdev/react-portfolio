@@ -22,7 +22,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const scrollThreshold = 10; 
+      const scrollThreshold = 10;
 
       if (scrollTop > scrollThreshold) {
         setIsBackgroundChange(true);
@@ -31,10 +31,10 @@ const NavBar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -43,7 +43,11 @@ const NavBar = () => {
   }
 
   return (
-    <header className={`bg-transparent absolute top-0 left-0 w-full flex items-center z-10 ${isBackgroundChange ? 'navbar-fixed' : ''}`}>
+    <header
+      className={`bg-transparent absolute top-0 left-0 w-full flex items-center z-10 ${
+        isBackgroundChange ? "navbar-fixed" : ""
+      }`}
+    >
       <div className="container">
         <div className="flex items-center justify-between relative">
           <div className="px-4">
@@ -58,16 +62,20 @@ const NavBar = () => {
             <button
               onClick={toggleClass}
               type="button"
-              className={`block absolute right-4 lg:hidden ${isClassVisible ? "hamburger-active" : ""}`}
+              className={`block absolute right-4 lg:hidden ${
+                isClassVisible ? "hamburger-active" : ""
+              }`}
             >
-                <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                <span className="hamburger-line transition duration-300 ease-in-out"></span>
-                <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+              <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+              <span className="hamburger-line transition duration-300 ease-in-out"></span>
+              <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
             </button>
 
             <nav
               onClick={toggleClass}
-              className={`absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none ${!isMobile && !isClassVisible ? "hidden" : ""}`}
+              className={`absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none ${
+                !isMobile && !isClassVisible ? "hidden" : ""
+              }`}
             >
               <ul className="block lg:flex">
                 <li className="group">
@@ -110,11 +118,32 @@ const NavBar = () => {
                     Contact
                   </a>
                 </li>
+                <li className="flex items-center pl-8">
+                  <div className='flex'>
+                    <span className="mr-2 text-sm text-slate-500">light</span>
+                    <input type="checkbox" className="hidden" id="dark-toggle" />
+                    <label htmlFor="dark-toggle">
+                      <div className="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div className={`toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out`}></div>
+                      </div>
+                    </label>
+                    <span className="ml-2 text-sm text-slate-500">dark</span>
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
+
+      <a
+        href="#home"
+        className={`fixed justify-center items-center bottom-4 right-4 z-[9999] h-12 w-12 rounded-full bg-primary p-4 hover:animate-pulse ${
+          isBackgroundChange ? "flex" : "hidden"
+        }`}
+      >
+        <span className="block w-4 h-4 border-t-2 border-l-2 rotate-45 mt-2"></span>
+      </a>
     </header>
   );
 };

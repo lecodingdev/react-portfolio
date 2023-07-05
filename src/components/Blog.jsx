@@ -2,7 +2,7 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <section className='pt-36 pb-32 bg-slate-100'>
+    <section id='blog' className='pt-36 pb-32 bg-slate-100'>
         <div className="container">
             <div className="w-full px-4">
                 <div className="max-w-xl mx-auto text-center mb-16">

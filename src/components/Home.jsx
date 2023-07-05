@@ -3,7 +3,7 @@ import logo from "../assets/profile.png";
 
 const Home = () => {
   return (
-    <section id="home" className="pt-36">
+    <section id="home" className="pt-36 dark:bg-black">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">

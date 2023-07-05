@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom'
 import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
