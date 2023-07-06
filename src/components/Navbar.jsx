@@ -4,7 +4,7 @@ const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isClassVisible, setIsClassVisible] = useState(false);
   const [isBackgroundChange, setIsBackgroundChange] = useState(false);
-  const [theme, setTheme] = useState(localStorage.theme || 'light');
+  const [theme, setTheme] = useState(localStorage.theme || "light");
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,18 +40,18 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
     }
   }, [theme]);
 
   function toggleClass() {
     setIsClassVisible(!isClassVisible);
-  };
+  }
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -134,16 +134,26 @@ const NavBar = () => {
                   </a>
                 </li>
                 <li className="mt-3 lg:mt-0 flex items-center pl-8">
-                    <div className="flex">
+                  <div className="flex">
                     <span className="mr-2 text-sm text-slate-500">light</span>
-                    <input onClick={toggleTheme} type="checkbox" checked={theme === 'dark'} className="hidden" id="dark-toggle" />
+                    <input
+                      onClick={toggleTheme}
+                      type="checkbox"
+                      checked={theme === "dark"}
+                      className="hidden"
+                      id="dark-toggle"
+                    />
                     <label htmlFor="dark-toggle">
                       <div className="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                        <div className='toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out'></div>
+                        <div
+                          className={`toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out ${
+                            theme === "dark" ? "transform translate-x-4" : ""
+                          }`}
+                        ></div>
                       </div>
                     </label>
                     <span className="ml-2 text-sm text-slate-500">dark</span>
-                    </div>
+                  </div>
                 </li>
               </ul>
             </nav>
