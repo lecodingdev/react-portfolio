@@ -2,14 +2,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="pt-36 pb-32">
+    <section id="about" className="pt-36 pb-32 dark:bg-dark">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full px-4 mb-10 lg:w-1/2 ">
             <h4 className="font-bold upper text-primary text-lg mb-3">
               About Me
             </h4>
-            <h2 className="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">
+            <h2 className="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">
               Living by Dreams!
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
@@ -18,7 +18,7 @@ const About = () => {
             </p>
           </div>
           <div className="w-full px-4 lg:w-1/2">
-            <h3 className="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">
+            <h3 className="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">
               My Social Account
             </h3>
             <p className="font-medium text-base text-secondary mb-6 lg:text-lg">

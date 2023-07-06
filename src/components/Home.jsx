@@ -3,20 +3,20 @@ import logo from "../assets/profile.png";
 
 const Home = () => {
   return (
-    <section id="home" className="pt-36 dark:bg-black">
+    <section id="home" className="pt-36 dark:bg-dark">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">
             <h1 className="text-base font-semibold text-primary md:text-xl">
               Hello, im{" "}
-              <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl ">
+              <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white ">
                 Alan Tanadi
               </span>{" "}
             </h1>
-            <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl">
+            <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl dark:text-white">
               Software Engineer
             </h2>
-            <p className="font-medium text-secondary mb-10 leading-relaxed">
+            <p className="font-medium text-secondary mb-10 leading-relaxed ">
               Full time learner
             </p>
 
@@ -31,8 +31,8 @@ const Home = () => {
 
           <div className="w-full self-end px-4 lg:w-1/2">
             <div className="relative mt-8 lg:mt-0 lg:right-0">
-              <img className="max-w-full mx-auto" src={logo} />
-              <span className="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+              <img className="relative z-10 max-w-full mx-auto" src={logo} />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
                 <svg width={400} height={400} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill="#14b8a6"
