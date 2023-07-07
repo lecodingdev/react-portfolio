@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import IconLogo from '../assets/react.svg';
 
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -65,7 +66,8 @@ const NavBar = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between relative">
-          <div className="px-4">
+          <div className="px-4 flex">
+            <img src={IconLogo} className='mr-2 animate-spin-slow'/>
             <a
               href="#home"
               className="font-bold text-lg text-primary block py-6"
@@ -152,7 +154,7 @@ const NavBar = () => {
                         ></div>
                       </div>
                     </label>
-                    <span className="ml-2 text-sm text-slate-500">dark</span>
+                    <span className="ml-2 text-sm text-slate-500">Dark</span>
                   </div>
                 </li>
               </ul>
