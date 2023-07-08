@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import IconLogo from '../assets/react.svg';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isClassVisible, setIsClassVisible] = useState(false);
   const [isBackgroundChange, setIsBackgroundChange] = useState(false);
   const [theme, setTheme] = useState(localStorage.theme || "light");
+  const [isClicked, setIsClicked] = useState(false);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,6 +60,7 @@ const NavBar = () => {
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+    setIsClicked(!isClicked);
   };
 
   return (
@@ -74,6 +79,27 @@ const NavBar = () => {
             >
               LeCodingDev
             </a>
+            <div className="flex items-center pl-2">
+                  <div className="flex">
+                    <input
+                      onClick={toggleTheme}
+                      type="checkbox"
+                      checked={theme === "dark"}
+                      className="hidden"
+                      id="dark-toggle"
+                    />
+                    <label htmlFor="dark-toggle">
+                      <div >
+                      {isClicked ? <LightModeIcon className="dark:text-white" /> : <DarkModeOutlinedIcon />}
+                        <div
+                          className={` ${
+                            theme === "dark" ? "transform translate-x-4" : ""
+                          }`}
+                        ></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
           </div>
           <div className="flex items-center px-4">
             <button
@@ -134,28 +160,6 @@ const NavBar = () => {
                   >
                     Contact
                   </a>
-                </li>
-                <li className="mt-3 lg:mt-0 flex items-center pl-8">
-                  <div className="flex">
-                    <span className="mr-2 text-sm text-slate-500">light</span>
-                    <input
-                      onClick={toggleTheme}
-                      type="checkbox"
-                      checked={theme === "dark"}
-                      className="hidden"
-                      id="dark-toggle"
-                    />
-                    <label htmlFor="dark-toggle">
-                      <div className="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                        <div
-                          className={`toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out ${
-                            theme === "dark" ? "transform translate-x-4" : ""
-                          }`}
-                        ></div>
-                      </div>
-                    </label>
-                    <span className="ml-2 text-sm text-slate-500">Dark</span>
-                  </div>
                 </li>
               </ul>
             </nav>
