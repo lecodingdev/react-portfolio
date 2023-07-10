@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -28,19 +29,16 @@ const Footer = () => {
                     <h3 className='font-semibold text-xl text-white mb-5'>Link</h3>
                     <ul className='text-slate-300'>
                         <li>
-                            <a href="#home" className='inline-block text-base hover:text-primary mb-3'>Home</a>
+                            <NavLink to="" className='inline-block text-base hover:text-primary mb-3'>Home</NavLink>
                         </li>
                         <li>
-                            <a href="#about" className='inline-block text-base hover:text-primary mb-3'>About</a>
+                            <NavLink to="blog" className='inline-block text-base hover:text-primary mb-3'>Blog</NavLink>
                         </li>
                         <li>
-                            <a href="#blog" className='inline-block text-base hover:text-primary mb-3'>Blog</a>
+                            <NavLink to="project" className='inline-block text-base hover:text-primary mb-3'>Project</NavLink>
                         </li>
                         <li>
-                            <a href="#project" className='inline-block text-base hover:text-primary mb-3'>Project</a>
-                        </li>
-                        <li>
-                            <a href="#contact" className='inline-block text-base hover:text-primary mb-3'>Contact</a>
+                            <NavLink to="contact" className='inline-block text-base hover:text-primary mb-3'>Contact</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +47,7 @@ const Footer = () => {
             <div className="w-full pt-10 border-t border-slate-700">
                 <div className="flex items-center justify-center mb-5">
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@lecodingdev"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -67,7 +65,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/lecodingdev"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -85,7 +83,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/alan-tanadi/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -103,7 +101,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://medium.com"
+                href="https://lecodingdev.medium.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"

@@ -27,7 +27,7 @@ const About = () => {
             </p>
             <div className="flex items-center">
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@lecodingdev"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -45,7 +45,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/lecodingdev"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -63,7 +63,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/alan-tanadi/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -81,7 +81,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://medium.com"
+                href="https://lecodingdev.medium.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"

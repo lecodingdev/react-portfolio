@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 import IconLogo from '../assets/react.svg';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import ScrollToTop from "./ScrollToTop";
 
 const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -69,16 +71,16 @@ const NavBar = () => {
         isBackgroundChange ? "navbar-fixed" : ""
       }`}
     >
-      <div className="container">
+      <div className="container nav-anim animate__animated animate__fadeInDown animate__delay-1s">
         <div className="flex items-center justify-between relative">
           <div className="px-4 flex">
             <img src={IconLogo} className='mr-2 animate-spin-slow'/>
-            <a
-              href="#home"
+            <NavLink
+              to=''
               className="font-bold text-lg text-primary block py-6"
             >
               LeCodingDev
-            </a>
+            </NavLink>
             <div className="flex items-center pl-2">
                   <div className="flex">
                     <input
@@ -122,44 +124,36 @@ const NavBar = () => {
             >
               <ul className="block lg:flex">
                 <li className="group">
-                  <a
-                    href="#home"
+                  <NavLink
+                    to=""
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                   >
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
-                  <a
-                    href="#about"
-                    className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                  >
-                    About
-                  </a>
-                </li>
-                <li className="group">
-                  <a
-                    href="#blog"
+                  <NavLink
+                    to="blog"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                   >
                     Blog
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
-                  <a
-                    href="#project"
+                  <NavLink
+                    to="project"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                   >
                     Project
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="group">
-                  <a
-                    href="#contact"
+                  <NavLink
+                    to="contact"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                   >
                     Contact
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -168,7 +162,7 @@ const NavBar = () => {
       </div>
 
       <a
-        href="#home"
+        onClick={ScrollToTop}
         className={`fixed justify-center items-center bottom-4 right-4 z-[9999] h-12 w-12 rounded-full bg-primary p-4 hover:animate-pulse ${
           isBackgroundChange ? "flex" : "hidden"
         }`}
