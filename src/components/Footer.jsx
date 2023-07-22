@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/lecodingdev.png'
 
 const Footer = () => {
   return (
@@ -12,18 +13,10 @@ const Footer = () => {
                     <p>lecodingdev@gmail.com</p>
                 </div>
                 <div className="w-full px-4 mb-12 md:w-1/3">
-                    <h3 className='font-semibold text-xl text-white mb-5'>Category</h3>
-                    <ul className='text-slate-300'>
-                        <li>
-                            <a href="#" className='inline-block text-base hover:text-primary mb-3'>How to Mastering ReactJs</a>
-                        </li>
-                        <li>
-                            <a href="#" className='inline-block text-base hover:text-primary mb-3'>Jira is Best Agile Method</a>
-                        </li>
-                        <li>
-                            <a href="#" className='inline-block text-base hover:text-primary mb-3'>Sanity Headless CMS</a>
-                        </li>
-                    </ul>
+                    <h3 className='font-semibold text-xl text-white mb-5'>
+                      <NavLink to="">
+                    <img src={logo} alt="logo" width='200px' /></NavLink>
+                    </h3>
                 </div>
                 <div className="w-full px-4 mb-12 md:w-1/3">
                     <h3 className='font-semibold text-xl text-white mb-5'>Link</h3>
@@ -101,7 +94,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://lecodingdev.medium.com/"
+                href="https://medium.com/@alantanadi"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
@@ -118,7 +111,7 @@ const Footer = () => {
                 </svg>
               </a>
                 </div>
-                <p className='font-medium text-xs text-slate-500 text-center'>Created by <a href="https://github.com" target='_blank' rel="noreferrer" className='font-bold text-primary'>Alan Tanadi</a>, using <a href="https://react.dev" target='_blank' rel="noreferrer" className='font-bold text-sky-600'>ReactJs</a> and <a href="https://tailwindcss.com" target='_blank' rel="noreferrer" className='font-bold text-sky-500'>Tailwind CSS</a>.</p>
+                <p className='font-medium text-xs text-slate-500 text-center'>Created by <a href="https://github.com/lecodingdev" target='_blank' rel="noreferrer" className='font-bold text-primary'>Alan Tanadi</a>, using <a href="https://react.dev" target='_blank' rel="noreferrer" className='font-bold text-sky-600'>ReactJs</a> and <a href="https://tailwindcss.com" target='_blank' rel="noreferrer" className='font-bold text-sky-500'>Tailwind CSS</a>.</p>
             </div>
         </div>
     </footer>

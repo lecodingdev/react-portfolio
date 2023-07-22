@@ -13,8 +13,12 @@ const About = () => {
               Living by Dreams!
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sed
-              dolorem eius autem illum ipsa magnam?
+              Living by dreams is the fuel that motivates us to pursue our
+              passions and conquer challenges, turning aspirations into reality.
+              It inspires us to reach for greatness, break free from
+              limitations, and live a life of purpose and fulfillment. Embracing
+              our dreams empowers us to create a future filled with endless
+              possibilities and unwavering motivation.
             </p>
           </div>
           <div className="w-full px-4 lg:w-1/2">
@@ -22,8 +26,7 @@ const About = () => {
               My Social Account
             </h3>
             <p className="font-medium text-base text-secondary mb-6 lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
-              consequatur quasi. Dicta numquam voluptates fuga eum in vero!
+              Follow and Connect to me by my social account ;)
             </p>
             <div className="flex items-center">
               <a
@@ -81,7 +84,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://lecodingdev.medium.com/"
+                href="https://medium.com/@alantanadi"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"

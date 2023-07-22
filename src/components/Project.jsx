@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import client from "../client";
 
 const Project = () => {
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "project"] {
+          title,
+          date,
+          slug,
+          skill,
+          description,
+          link,
+          mainImage {
+            asset -> {
+              _id,
+              url
+            },
+            alt
+          }
+        }`
+      )
+      .then((data) => setProjectData(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <section id="project" className="pt-36 pb-32 bg-white dark:bg-dark">
       <div className="container">
@@ -11,41 +37,53 @@ const Project = () => {
               My Project
             </h2>
             <p className="font-medium text-md text-secondary md:text-lg animate__animated animate__fadeInDown animate__delay-1s">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              repudiandae deserunt molestias dolore.
+              Each project taught me valuable lessons and exposed me to
+              different tools and technologies, further enriching my skill set
+              and problem-solving abilities. The challenges I encountered during
+              these projects helped me grow as a developer and motivated me to
+              keep exploring and pushing the boundaries of what I can achieve.
             </p>
           </div>
         </div>
 
-        <div className="w-full px-4 flex flex-wrap justify-center">
-            <div className="mb-12 p-4 md:w-1/2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
-                <div className="rounded-md shadow-md overflow-hidden">
-                    <img src='https://source.unsplash.com/600x300?page' width='w-full'/>
-                </div>
-                <h3 className="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Landing Page</h3>
-                <p className="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi corrupti atque.</p>
-            </div>
-            <div className="mb-12 p-4 md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1200">
-                <div className="rounded-md shadow-md overflow-hidden">
-                    <img src='https://source.unsplash.com/600x300?contact' width='w-full'/>
-                </div>
-                <h3 className="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">MPV contact page</h3>
-                <p className="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi corrupti atque.</p>
-            </div>
-            <div className="mb-12 p-4 md:w-1/2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1400">
-                <div className="rounded-md shadow-md overflow-hidden">
-                    <img src='https://source.unsplash.com/600x300?slicing' width='w-full'/>
-                </div>
-                <h3 className="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Slicing</h3>
-                <p className="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi corrupti atque.</p>
-            </div>
-            <div className="mb-12 p-4 md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1600">
-                <div className="rounded-md shadow-md overflow-hidden">
-                    <img src='https://source.unsplash.com/600x300?ecommerce' width='w-full'/>
-                </div>
-                <h3 className="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">E-commerce</h3>
-                <p className="font-medium text-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi corrupti atque.</p>
-            </div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="1200"
+          className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {projectData.map((project) => (
+            <article key={project.slug.current}>
+              <img
+                className="h-60 w-full"
+                src={project.mainImage.asset.url}
+                alt={project.title}
+              />
+              <h4 className="text-xl mt-2 dark:text-white">{project.title}</h4>
+              <div className=" text-secondary text-xs flex flex-col mt-2">
+                <span>
+                  <strong>Skills</strong>: {project.skill}
+                </span>
+                <span>
+                  <strong className="font-bold">Finished on </strong>:{" "}
+                  {new Date(project.date).toDateString()}
+                </span>
+                <span className="my-6 text-base text-secondary leading-relaxed">
+                  {project.description}
+                </span>
+              </div>
+              <button className="mt-5 mb-10">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="py-2 px-6 rounded-full shadow text-white bg-primary hover:opacity-80 border-none transition-all duration-500 font-bold"
+                >
+                  View The Project
+                </a>
+              </button>
+            </article>
+          ))}
         </div>
       </div>
     </section>
