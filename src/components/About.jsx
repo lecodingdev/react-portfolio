@@ -26,7 +26,10 @@ const About = () => {
               My Social Account
             </h3>
             <p className="font-medium text-base text-secondary mb-6 lg:text-lg">
-              Follow and Connect to me by my social account ;)
+              Feel free to follow and connect with me on my social media
+              accounts. I share my projects and learning journey there. Lets
+              stay connected and inspire each other in the world of technology
+              and development!
             </p>
             <div className="flex items-center">
               <a

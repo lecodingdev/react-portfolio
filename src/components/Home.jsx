@@ -34,11 +34,11 @@ const Home = () => {
             </p>
 
             <a
-              href="#contact"
+              href="https://github.com/lecodingdev"
               className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out animate__animated animate__fadeInUp animate__delay-1s"
             >
               {" "}
-              Contact Me
+              Follow Me
             </a>
           </div>
 
@@ -72,9 +72,9 @@ const Home = () => {
       <Project />
     </section>
 
-    <section id="contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    {/* <section id="contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <Contact />
-    </section>
+    </section> */}
     </div>
 
 

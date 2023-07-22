@@ -147,14 +147,14 @@ const NavBar = () => {
                     Project
                   </NavLink>
                 </li>
-                <li className="group">
+                {/* <li className="group">
                   <NavLink
                     to="contact"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                   >
                     Contact
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

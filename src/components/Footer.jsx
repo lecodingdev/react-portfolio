@@ -30,9 +30,9 @@ const Footer = () => {
                         <li>
                             <NavLink to="project" className='inline-block text-base hover:text-primary mb-3'>Project</NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink to="contact" className='inline-block text-base hover:text-primary mb-3'>Contact</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
