@@ -3,7 +3,7 @@ import logo from "../assets/profile.png";
 import TypedJS from "../utility/TypedJS";
 import About from "./About";
 import Blog from "./Blog";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import Project from "./Project";
 
 const Home = () => {
@@ -45,14 +45,8 @@ const Home = () => {
           <div className="w-full self-end px-4 lg:w-1/2 animate__animated animate__fadeInUp animate__delay-1s">
             <div className="relative mt-8 lg:mt-0 lg:right-0">
               <img className="relative z-10 max-w-full mx-auto" src={logo} />
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
-                <svg width={400} height={400} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill="#14b8a6"
-                    d="M40.2,-36.5C56,-24.5,75.3,-12.2,75.3,0C75.3,12.2,56,24.5,40.2,37.3C24.5,50.1,12.2,63.5,0.8,62.6C-10.6,61.8,-21.1,46.7,-30.5,33.9C-40,21.1,-48.2,10.6,-50.6,-2.4C-53,-15.3,-49.4,-30.5,-40,-42.6C-30.5,-54.7,-15.3,-63.6,-1.5,-62.1C12.2,-60.5,24.5,-48.6,40.2,-36.5Z"
-                    transform="translate(100 100) scale(1.1)"
-                  />
-                </svg>
+              <span>
+                <div className="bg-[#14b8a6] w-[800px] h-[800px] md:-right-14 rounded-full absolute -right-52 -bottom-80 -z-10"></div>
               </span>
             </div>
           </div>
