@@ -3,7 +3,6 @@ import logo from "../assets/profile.png";
 import TypedJS from "../utility/TypedJS";
 import About from "./About";
 import Blog from "./Blog";
-// import Contact from "./Contact";
 import Project from "./Project";
 
 const Home = () => {
