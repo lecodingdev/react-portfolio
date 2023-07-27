@@ -1,7 +1,7 @@
 #code-block__container {
   position: relative;
 }
-button {
+#code-block__container button {
   z-index: 2;
   margin: 0;
   padding: 0.5rem;
@@ -16,7 +16,7 @@ button {
   line-height: 1;
   cursor: pointer;
 }
-pre {
+#code-block__container pre {
   display: flex;
   position: relative;
   padding: 1rem;
