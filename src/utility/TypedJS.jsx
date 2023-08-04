@@ -9,10 +9,10 @@ export default function TypedJS({ string, loop, speed, disableCursor }) {
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: string,
-      typeSpeed: speed ? speed : 30,
+      typeSpeed: speed || 30,
       backSpeed: 50,
-      loop: loop ? loop : false,
-      showCursor: disableCursor ? false : true,
+      loop: loop || false,
+      showCursor: !disableCursor,
     });
 
     return () => {
