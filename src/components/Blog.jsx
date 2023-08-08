@@ -55,7 +55,7 @@ const Blog = () => {
           data-aos-delay="1200"
           className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
         >
-          {posts.map((post) => (
+          {posts.slice(0, 3).map((post) => (
             <article key={post.slug.current}>
               <img
                 className="h-60 w-full"
