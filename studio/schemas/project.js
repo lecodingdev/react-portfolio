@@ -26,12 +26,15 @@ export default defineType({
       to: {type: 'author'},
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'mainImages', 
+      title: 'Main Images',
+      type: 'array',
+      of: [{
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }],
     }),
     defineField({
       name: 'date',

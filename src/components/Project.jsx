@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
 import client from "../client";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+// import required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 const Project = () => {
   const [projectData, setProjectData] = useState([]);
@@ -14,7 +24,7 @@ const Project = () => {
           skill,
           description,
           link,
-          mainImage {
+          mainImages[] {
             asset -> {
               _id,
               url
@@ -54,11 +64,26 @@ const Project = () => {
         >
           {projectData.map((project) => (
             <article key={project.slug.current}>
-              <img
-                className="h-60 w-full"
-                src={project.mainImage.asset.url}
-                alt={project.title}
-              />
+              <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log("slide change")}
+              >
+                {project.mainImages.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      className="h-60 w-full"
+                      src={image.asset.url}
+                      alt={project.title}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               <h4 className="text-xl mt-2 dark:text-white">{project.title}</h4>
               <div className=" text-secondary text-xs flex flex-col mt-2">
                 <span>
