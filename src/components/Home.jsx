@@ -21,10 +21,10 @@ const Home = () => {
                 <TypedJS
                   loop={true}
                   string={[
-                    'I\'m <span style="color: rgb(14 165 233)">Frontend</span> Developer.',
-                    'I\'m <span style="color: rgb(59 130 246)">React</span> Developer.',
-                    'I\'m <span style="color: rgb(234 179 8)">Backend</span> Developer.',
-                    'I\'m <span style="color: #14b8a6">Fullstack</span> Developer.',
+                    'I\'m <span style="color: rgb(14 165 233)">Frontend</span> Developer',
+                    'I\'m <span style="color: rgb(59 130 246)">React</span> Developer',
+                    'I\'m <span style="color: rgb(234 179 8)">Backend</span> Developer',
+                    'I\'m <span style="color: #14b8a6">Fullstack</span> Developer',
                   ]}
                 />
               </h2>
