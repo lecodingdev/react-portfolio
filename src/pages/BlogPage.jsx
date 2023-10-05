@@ -30,13 +30,13 @@ const BlogPage = () => {
       <div className="container">
         <div className="w-full px-4">
           <div className="max-w-xl mx-auto text-center mb-16">
-            <h4 className="font-semibold text-lg text-primary mb-2 animate__animated animate__fadeInDown animate__delay-1s">
+            <h4 className="font-semibold text-lg text-primary mb-2 animate__animated animate__fadeInDown animate__delay-2s">
               Blog
             </h4>
             <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white animate__animated animate__fadeInDown animate__delay-1s">
               My Article
             </h2>
-            <p className="font-medium text-md text-secondary md:text-lg animate__animated animate__fadeInDown animate__delay-1s">
+            <p className="font-medium text-md text-secondary md:text-lg animate__animated animate__fadeInDown animate__delay-2s">
               Throughout my learning journey, I have written various articles
               that reflect my dedication to exploring new knowledge and skills.
               The primary purpose of these articles is to provide guidance,

@@ -73,15 +73,16 @@ const NavBar = () => {
     >
       <div className="container nav-anim animate__animated animate__fadeInDown animate__delay-1s">
         <div className="flex items-center justify-between relative">
-          <div className="px-4 flex">
+          <div className="px-4 flex py-6 items-center">
             <img src={IconLogo} className='mr-2 animate-spin-slow'/>
             <NavLink
               to=''
-              className="font-bold text-lg text-primary block py-6"
+              className="font-bold text-lg text-primary block "
+              onClick={() => ScrollToTop("/")}
             >
               LeCodingDev
             </NavLink>
-            <div className="flex items-center pl-2">
+            <div className="flex ml-2 items-center p-[1px] border border-black dark:border-white dark:hover:border-primary rounded justify-center text-center hover:border-primary hover:text-primary">
                   <div className="flex">
                     <input
                       onClick={toggleTheme}
@@ -92,7 +93,7 @@ const NavBar = () => {
                     />
                     <label htmlFor="dark-toggle">
                       <div >
-                      {isClicked ? <LightModeIcon className="dark:text-white" /> : <DarkModeOutlinedIcon />}
+                      {isClicked ? <LightModeIcon className="dark:text-white dark:hover:text-primary" /> : <DarkModeOutlinedIcon />}
                         <div
                           className={` ${
                             theme === "dark" ? "transform translate-x-4" : ""
@@ -127,6 +128,7 @@ const NavBar = () => {
                   <NavLink
                     to=""
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
+                    onClick={() => ScrollToTop("/")}
                   >
                     Home
                   </NavLink>
@@ -135,6 +137,7 @@ const NavBar = () => {
                   <NavLink
                     to="blog"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
+                    onClick={() => ScrollToTop("blog")}
                   >
                     Blog
                   </NavLink>
@@ -143,32 +146,25 @@ const NavBar = () => {
                   <NavLink
                     to="project"
                     className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
+                    onClick={() => ScrollToTop("project")}
                   >
                     Project
                   </NavLink>
                 </li>
-                {/* <li className="group">
-                  <NavLink
-                    to="contact"
-                    className="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
-                  >
-                    Contact
-                  </NavLink>
-                </li> */}
               </ul>
             </nav>
           </div>
         </div>
       </div>
 
-      <a
+      <button
         onClick={ScrollToTop}
         className={`fixed justify-center items-center bottom-4 right-4 z-[9999] h-12 w-12 rounded-full bg-primary p-4 hover:animate-pulse ${
           isBackgroundChange ? "flex" : "hidden"
         }`}
       >
         <span className="block w-4 h-4 border-t-2 border-l-2 rotate-45 mt-2"></span>
-      </a>
+      </button>
     </header>
   );
 };
