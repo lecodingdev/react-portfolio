@@ -77,10 +77,10 @@ body {
 
 .progressBar {
   height: 100%;
-  width: 0;  /* Initially, the progress bar is empty */
-  background-color: #2196F3;  /* Color of the filled progress */
-  border-radius: 10px 0 0 10px; /* Rounded corners on the left */
-  animation: fillBar 5s forwards; /* Animation to fill the bar */
+  width: 0;  
+  background-color: #2196F3;  
+  border-radius: 10px 0 0 10px;
+  animation: fillBar 5s forwards;
 }
 
 @keyframes fillBar {

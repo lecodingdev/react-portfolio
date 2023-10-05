@@ -12,7 +12,7 @@ const Home = () => {
           <div className="flex flex-wrap justify-center items-center text-center">
             <div className="w-full self-center order-2 lg:order-none items-center text-center py-5 lg:w-1/2">
               <h1 className="text-base font-semibold text-primary md:text-xl animate__animated animate__fadeInUp animate__delay-1s">
-                Hello, my names is{" "}
+                Hello, my name{" "}
                 <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white ">
                   Alan Tanadi
                 </span>{" "}
@@ -140,7 +140,6 @@ const Home = () => {
       <section>
         <Project />
       </section>
-
     </div>
   );
 };
